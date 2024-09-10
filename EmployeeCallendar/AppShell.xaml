@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EmployeeCallendar.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EmployeeCallendar"
+    xmlns:home="using:EmployeeCallendar.Pages.Home"
+    Shell.FlyoutBehavior="Locked"
+    Title="EmployeeCallendar">
+
+    <FlyoutItem Title="Dashboard">
+        <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate home:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Dodaj pracownika">
+        <ShellContent Title="Dodaj pracownika" 
+                      ContentTemplate="{DataTemplate home:AddEmployee}"
+                      Route="AddEmployee"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Kalendarz pracowników">
+        <ShellContent Title="Kalendarz pracowników" 
+                      ContentTemplate="{DataTemplate home:EmployeeCallendar}"
+                      Route="EmployeeCallendar"/>
+    </FlyoutItem>
+
+</Shell>

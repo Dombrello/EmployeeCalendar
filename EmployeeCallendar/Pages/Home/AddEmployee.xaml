@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeCallendar.Pages.Home.AddEmployee"
+             xmlns:vm="clr-namespace:EmployeeCallendar.ViewModel"
+             Title="AddEmployee"
+             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+             x:Name="EmployeePage">
+
+    <ContentPage.BindingContext>
+        <vm:AddEmployeeViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <Frame>
+           <dg:DataGrid ItemsSource="{Binding ObUsers}">
+               <dg:DataGrid.Columns>
+                   <dg:DataGridColumn Title="ID" PropertyName="Id"/>
+                   <dg:DataGridColumn Title="Imię" PropertyName="FirstName"/>
+                   <dg:DataGridColumn Title="Nazwisko" PropertyName="LastName"/>
+                   <dg:DataGridColumn Title="Email" PropertyName="email"/>
+                   <dg:DataGridColumn Title="Telefon" PropertyName="phone"/>
+                   <dg:DataGridColumn Title="Nazwa użytkownika" PropertyName="username"/>
+                </dg:DataGrid.Columns>
+           </dg:DataGrid>
+        </Frame>
+
+        <Frame>
+            <FlexLayout JustifyContent="Start" AlignItems="Start" HorizontalOptions="Fill">
+                <Entry Placeholder="Nazwa użytkownika" Text="{Binding ObUsername}"/>
+                <Entry Placeholder="Hasło" Text="{Binding ObPassword}"/>
+                <Entry Placeholder="Imię" Text="{Binding ObFirstName}"/>
+                <Entry Placeholder="Nazwisko" Text="{Binding ObLastName}"/>
+                <Entry Placeholder="Adres Email" Text="{Binding ObEmail}"/>
+                <Entry Placeholder="Numer telefonu" Text="{Binding ObPhone}"/>
+
+                <Button Text="Dodaj pracownika" Command="{Binding RegisterEmployeeCommand}"/>
+            </FlexLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loginRegister:LoginRegister xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loginRegister="using:EmployeeCallendar.Pages.LoginRegister"
+             x:Class="EmployeeCallendar.Pages.LoginRegister.Login">
+
+    <loginRegister:LoginRegister.BasePageContent>
+        <VerticalStackLayout>
+            <Entry Placeholder="username" x:Name="username"/>
+            <Entry Placeholder="hasło" IsPassword="True" x:Name="password"/> 
+            <Button Text="Zaloguj się" Clicked="Button_OnClicked"/>
+        </VerticalStackLayout>
+    </loginRegister:LoginRegister.BasePageContent>
+
+</loginRegister:LoginRegister>
